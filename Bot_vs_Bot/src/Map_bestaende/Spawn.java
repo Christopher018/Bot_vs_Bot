@@ -1,8 +1,16 @@
-package bot_vs_bot;
+package Map_bestaende;
 
 import java.awt.Frame;
 
 import javax.swing.JFrame;
+
+import Bots.Bot_A;
+import Bots.Bot_B;
+import Bots.Bot_E;
+import Bots.Bot_E2;
+import Bots.Bot_E3;
+import Bots.Bot_F;
+import Main.Game;
 
 public class Spawn extends JFrame {
 	Game game;

@@ -1,4 +1,4 @@
-package bot_vs_bot;
+package Map_bestaende;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -6,6 +6,8 @@ import java.awt.HeadlessException;
 import java.awt.Rectangle;
 
 import javax.swing.JFrame;
+
+import Main.Game;
 
 public class Objektiv extends JFrame {
 	Color farbe;

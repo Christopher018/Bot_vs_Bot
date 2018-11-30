@@ -1,4 +1,4 @@
-package bot_vs_bot;
+package Bots;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -6,6 +6,10 @@ import java.awt.HeadlessException;
 import java.awt.Rectangle;
 
 import javax.swing.JFrame;
+
+import Main.Game;
+import Map_bestaende.Schilde;
+import Projektile.Projektil;
 
 public abstract class BOT extends JFrame {
 	//jeder Bot erbt von dieser Klasse. es werden so grundregeln erschaffen

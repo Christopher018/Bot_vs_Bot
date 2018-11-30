@@ -1,4 +1,5 @@
-package bot_vs_bot;
+package Main;
+
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -17,21 +18,31 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Bots.BOT;
+import Input.InputKey;
+import Input.InputMouse;
+import Map_bestaende.Objektiv;
+import Map_bestaende.Schilde;
+import Map_bestaende.Wand;
+import Projektile.Projektil;
+import View.Spielfeld;
+import View.klick_anzeige;
+
 public class Game extends JPanel {
-	static JFrame frame = new JFrame("bot vs bot");
+	public static JFrame frame = new JFrame("bot vs bot");
 	// Alle Vectore
-	protected Vector<Wand> alleWaende = new Vector<Wand>(20);
-	protected Vector<Schilde> alleSchilde = new Vector<Schilde>(20);
-	protected Vector<klick_anzeige> alleklicks = new Vector<klick_anzeige>(5);
-	protected Vector<BOT> alleBots_Team_A = new Vector<BOT>(5);
-	protected Vector<BOT> alleBots_Team_B = new Vector<BOT>(5);
-	protected Vector<Projektil> alleProjektile = new Vector<Projektil>(100);
-	protected Vector<Spielfeld> alleSpielfelder = new Vector<Spielfeld>(1);
-	protected Vector<Objektiv> alleObjektives = new Vector<Objektiv>(10);
+	public Vector<Wand> alleWaende = new Vector<Wand>(20);
+	public Vector<Schilde> alleSchilde = new Vector<Schilde>(20);
+	public Vector<klick_anzeige> alleklicks = new Vector<klick_anzeige>(5);
+	public Vector<BOT> alleBots_Team_A = new Vector<BOT>(5);
+	public Vector<BOT> alleBots_Team_B = new Vector<BOT>(5);
+	public Vector<Projektil> alleProjektile = new Vector<Projektil>(100);
+	public Vector<Spielfeld> alleSpielfelder = new Vector<Spielfeld>(1);
+	public Vector<Objektiv> alleObjektives = new Vector<Objektiv>(10);
 	private int Sieger = 0;
 	private int Objectivzaehler = 0;
 	private boolean alleObjectivesfertig;
-	InputKey InputKey;
+	public InputKey InputKey;
 
 	public void paint(Graphics g) {
 		super.paint(g);

@@ -1,4 +1,4 @@
-package bot_vs_bot;
+package Input;
 
 import java.awt.MouseInfo;
 import java.awt.event.KeyAdapter;
@@ -6,6 +6,17 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
+import Bots.Bot_A;
+import Bots.Bot_F;
+import Main.Game;
+import Map_bestaende.Objektiv;
+import Map_bestaende.Wand;
+import Stat_anzeige.DataModel;
+import View.Bot_teams;
+import View.Infos;
+import View.Spielfeld;
+import View.TableView;
 
 public class InputKey extends KeyAdapter {
 	private boolean start = false;

@@ -1,7 +1,10 @@
-package bot_vs_bot;
+package View;
 
 import javax.swing.*;
 import javax.swing.table.*;
+
+import Main.Game;
+import Stat_anzeige.DataModel;
 
 import java.awt.*;
 import java.awt.event.*;

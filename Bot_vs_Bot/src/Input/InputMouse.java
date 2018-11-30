@@ -1,7 +1,11 @@
-package bot_vs_bot;
+package Input;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import Main.Game;
+import Map_bestaende.Wand;
+import View.klick_anzeige;
 
 public class InputMouse extends MouseAdapter {
 	private Game game;

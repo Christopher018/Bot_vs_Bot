@@ -1,4 +1,4 @@
-package bot_vs_bot;
+package Projektile;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -6,6 +6,8 @@ import java.awt.HeadlessException;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+
+import Main.Game;
 
 public class Projektil extends JFrame {
 	Color DARK_RED = new Color(140, 0, 0);

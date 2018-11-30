@@ -1,4 +1,4 @@
-package bot_vs_bot;
+package Stat_anzeige;
 
 public class DataClass {
 		// Die Klasse enthaelt die Attribute des Datenobjekts

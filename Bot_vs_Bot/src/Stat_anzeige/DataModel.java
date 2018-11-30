@@ -1,8 +1,11 @@
-package bot_vs_bot;
+package Stat_anzeige;
 
 import java.util.*;
 import javax.swing.JTextField;
 import javax.swing.table.*;
+
+import Main.Game;
+import View.TableView;
 
 public class DataModel extends AbstractTableModel {
 		//diese Klasse zeigt die Stats von einem Bot in einer Tabelle an und laesst es zu,

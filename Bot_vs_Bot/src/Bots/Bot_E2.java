@@ -1,9 +1,11 @@
-package bot_vs_bot;
+package Bots;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.HeadlessException;
 import java.util.Random;
+
+import Main.Game;
 
 public class Bot_E2 extends BOT {
 	//Testing bot

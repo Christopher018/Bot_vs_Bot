@@ -1,4 +1,4 @@
-package bot_vs_bot;
+package View;
 
 import java.awt.BorderLayout;
 import java.awt.Frame;
@@ -12,6 +12,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import Main.Game;
+import Map_bestaende.Spawn;
+import Map_bestaende.Wand;
 
 public class Bot_teams extends JFrame implements ActionListener {
 	//hier wird ein fenster erstellt, das einem zeigt was es für vordefinierte

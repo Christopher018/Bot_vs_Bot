@@ -1,8 +1,10 @@
-package bot_vs_bot;
+package Map_bestaende;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+
+import Main.Game;
 
 public class Wand {
 	Color SCHWARZ;

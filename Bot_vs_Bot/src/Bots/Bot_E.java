@@ -1,14 +1,15 @@
-package bot_vs_bot;
+package Bots;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.HeadlessException;
 import java.util.Random;
 
-public class Bot_A extends BOT {
-	//Testing bot 
-	Color DARK_GREEN = new Color(6, 50, 8);
-	Color Nummer_Blau = new Color(10, 100, 150);
+import Main.Game;
+
+public class Bot_E extends BOT {
+	//Testing bot
+	Color DARK_ORANGE = new Color(204, 102, 0);
 	// variablen für "Sturm"
 	private boolean wand = false;
 	private boolean angriff = true;
@@ -16,36 +17,19 @@ public class Bot_A extends BOT {
 
 	// variablen für "Deckung"
 	private boolean start = true;
-	// variable für eigene bewegung
-	private boolean wechsel = true;
 
-	public Bot_A(String name, int x, int y, int leben, int schaden, int cooldown, int speed, int movespeed,
+	public Bot_E(String name, int x, int y, int leben, int schaden, int cooldown, int speed, int movespeed,
 			int faehigkeit, Game game) throws HeadlessException {
 		super(name, x, y, leben, schaden, cooldown, speed, movespeed, faehigkeit, game);
 		this.name = name;
-		System.out.println(getNUMMER());
 	}
 
 	@Override
 	public void paint_char(Graphics2D g) {
-		
-		g.setColor(DARK_GREEN);
+		g.setColor(DARK_ORANGE);
 		// g.drawImage(Toolkit.getDefaultToolkit().getImage("C:/Users/toffe/Desktop/Testing/Fireball.png"),
 		// x, y, this);
 		g.fillOval(x, y, 20, 20);
-
-		String anzeigeNummer = String.valueOf(getNUMMER());
-		if (game.InputKey.getAuswahl() == getNUMMER()) {
-			g.setColor(Color.RED);
-		} else {
-			g.setColor(Nummer_Blau);
-		}
-
-		if (getNUMMER() < 10) {
-			g.drawString(anzeigeNummer, x + 7, y + 14);
-		} else {
-			g.drawString(anzeigeNummer, x + 3, y + 14);
-		}
 	}
 
 	@Override
@@ -64,13 +48,6 @@ public class Bot_A extends BOT {
 			for (int i = 0; i < game.getAnzBotB(); i++) {
 				if (game.getbot_team_B(i).getX() > x - 15 && game.getbot_team_B(i).getX() < x + 15
 						&& game.getbot_team_B(i).getY() > y) {
-					schuss(7, true);
-				}
-			}
-
-			for (int i = 0; i < game.getAnzBotB(); i++) {
-				if (game.getbot_team_B(i).getX() > x - 15 && game.getbot_team_B(i).getX() < x + 15
-						&& game.getbot_team_B(i).getY() < y) {
 					schuss(2, true);
 				}
 			}
@@ -132,55 +109,14 @@ public class Bot_A extends BOT {
 				}
 
 			}
-
-			if (game.InputKey.getAuswahl() == getNUMMER()) {
-				// manuelle steuerung
-				if (getZielx() != 0 && getZiely() != 0) {
-					if (wechsel) {
-						if (getZielx() - x > 2 || getZielx() - x < -2) {
-							if (getZielx() > x) {
-								if (!isAverkehrt()) {
-									rechts();
-								} else {
-									links();
-								}
-							} else {
-								if (!isAverkehrt()) {
-									links();
-								} else {
-									rechts();
-								}
-							}
-						}
-						wechsel = false;
-					} else {
-						if (getZiely() - y > 2 || getZiely() - y < -2) {
-							if (getZiely() > y) {
-								if (!isAverkehrt()) {
-									runter();
-								} else {
-									hoch();
-								}
-							} else {
-								if (!isAverkehrt()) {
-									hoch();
-								} else {
-									runter();
-								}
-							}
-						}
-						wechsel = true;
-					}
-
-				}
-			}
-
-			// hoch();
-			// schuss(2,false);
+			
+			
+		
+			hoch();
+			schuss(2,false);
 		} catch (ArrayIndexOutOfBoundsException ar) {
 
 		}
 
 	}
-
 }
