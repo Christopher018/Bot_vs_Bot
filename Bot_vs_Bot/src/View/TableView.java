@@ -68,7 +68,7 @@ public class TableView extends JFrame{
 						wert_int    =  Integer.parseInt(wert_String);
 						
 						if(table.getEditingRow() < game.getAnzBot()) {
-							System.out.println(game.getbot_team_A(table.getEditingRow()).getName()+" wurde bearbeitet");
+							//System.out.println(game.getbot_team_A(table.getEditingRow()).getName()+" wurde bearbeitet");
 							if(table.getEditingColumn() == 1) {
 								game.getbot_team_A(table.getEditingRow()).setLebenamanfang(wert_int);
 								game.getbot_team_A(table.getEditingRow()).setLeben(wert_int);
@@ -88,7 +88,7 @@ public class TableView extends JFrame{
 						}else {
 							int änderung_bot_b = table.getEditingRow() - game.getAnzBot();
 							System.out.println(änderung_bot_b);
-							System.out.println(game.getbot_team_B(table.getEditingRow()-game.getAnzBotB() +1).getName()+" wurde bearbeitet");
+							//System.out.println(game.getbot_team_B(table.getEditingRow()-game.getAnzBotB() +1).getName()+" wurde bearbeitet");
 							if(table.getEditingColumn() == 1) {
 								game.getbot_team_B(änderung_bot_b).setLebenamanfang(wert_int);
 								game.getbot_team_B(änderung_bot_b).setLeben(wert_int);

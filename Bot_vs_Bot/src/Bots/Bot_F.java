@@ -31,14 +31,14 @@ public class Bot_F extends BOT {
 	@Override
 	public void bewegen() {
 		/*
-		 * hoch(); runter(); rechts(); links(); schuss(1-8,geprüft ob das Ziel da
-		 * ist(true/false)); (cooldown();)
+		 * hoch(); | runter(); | rechts(); | links(); 
+		 * darfhoch(); | darfrunter(); | darfrechts(); | darflinks(); 
+		 * schuss(1-8(richtung),geprüft ob das Ziel da ist(true/false));
+		 * faehigkeit 1 = reparieren()
+		 * faehigkeit 2 = heilen()
+		 * faehigkeit 3 = schild(1-5)
 		 */
-		still();
-		// hier folgt beispiel Code
-
-		// bewegung
-		// ab hier eigener Code
+		
 		try {
 			// schuss 2,4,5,7
 			for (int i = 0; i < game.getAnzBot(); i++) {

@@ -25,7 +25,6 @@ public class Bot_A extends BOT {
 			int faehigkeit, Game game) throws HeadlessException {
 		super(name, x, y, leben, schaden, cooldown, speed, movespeed, faehigkeit, game);
 		this.name = name;
-		System.out.println(getNUMMER());
 	}
 
 	@Override
@@ -56,11 +55,7 @@ public class Bot_A extends BOT {
 		 * hoch(); runter(); rechts(); links(); schuss(1-8,geprüft ob das Ziel da
 		 * ist(true/false)); (cooldown();)
 		 */
-		still();
-		// hier folgt beispiel Code
-
-		// bewegung
-		// ab hier eigener Code
+		
 		try {
 			// schuss 2,4,5,7
 			for (int i = 0; i < game.getAnzBotB(); i++) {

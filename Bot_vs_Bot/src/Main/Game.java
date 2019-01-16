@@ -161,63 +161,66 @@ public class Game extends JPanel {
 		}
 
 		// Sieger feststellen
-		if (game.getAnzBotB() < 1 && game.getAnzBot() < 1) {
-			System.out.println("Unentschieden");
-			InputKey.setStart(false);
-		} else {
-			if (game.getAnzBotB() < 1) {
-				System.out.println("Sieger: Team A");
+		if (!InputKey.isSandbox()) {
+			//wenn nicht sandbox modus sucht gewinner
+			if (game.getAnzBotB() < 1 && game.getAnzBot() < 1) {
+				System.out.println("Unentschieden");
 				InputKey.setStart(false);
-			}
-			if (game.getAnzBot() < 1) {
-				System.out.println("Sieger: Team B");
-				InputKey.setStart(false);
-			}
-		}
-		if (game.getAnzObjektiv() > 0) {
-			for (int i = 0; i < alleObjektives.size(); i++) {
-				if (getObjektiv(i).collision()) {
-					Objectivzaehler = Objectivzaehler + 1;
-					if (Objectivzaehler == 2) {
-						if (getObjektiv(i).getWieweit() < 256) {
-							getObjektiv(i).setWieweit(getObjektiv(i).getWieweit() + 1);
-						}
-						if (getObjektiv(i).getWieweit() > 255) {
-							alleObjectivesfertig = true;
-							for (int ii = 0; ii < alleObjektives.size(); ii++) {
-								if (getObjektiv(ii).abgeschlossen() != 1) {
-									alleObjectivesfertig = false;
-								}
-							}
-							if (alleObjectivesfertig) {
-								System.out.println("Sieger: Team A");
-								InputKey.setStart(false);
-							}
-						}
-						Objectivzaehler = 0;
-					}
+			} else {
+				if (game.getAnzBotB() < 1) {
+					System.out.println("Sieger: Team A");
+					InputKey.setStart(false);
+				}
+				if (game.getAnzBot() < 1) {
+					System.out.println("Sieger: Team B");
+					InputKey.setStart(false);
 				}
 			}
-			for (int i = 0; i < alleObjektives.size(); i++) {
-				if (getObjektiv(i).collisionB()) {
-					Objectivzaehler = Objectivzaehler + 1;
-					if (Objectivzaehler == 2) {
-						if (getObjektiv(i).getWieweit() > -256) {
-							getObjektiv(i).setWieweit(getObjektiv(i).getWieweit() - 1);
-						}
-						if (getObjektiv(i).getWieweit() < -255) {
-							alleObjectivesfertig = true;
-							for (int ii = 0; ii < alleObjektives.size(); ii++) {
-								if (getObjektiv(ii).abgeschlossen() != -1) {
-									alleObjectivesfertig = false;
+			if (game.getAnzObjektiv() > 0) {
+				for (int i = 0; i < alleObjektives.size(); i++) {
+					if (getObjektiv(i).collision()) {
+						Objectivzaehler = Objectivzaehler + 1;
+						if (Objectivzaehler == 2) {
+							if (getObjektiv(i).getWieweit() < 256) {
+								getObjektiv(i).setWieweit(getObjektiv(i).getWieweit() + 1);
+							}
+							if (getObjektiv(i).getWieweit() > 255) {
+								alleObjectivesfertig = true;
+								for (int ii = 0; ii < alleObjektives.size(); ii++) {
+									if (getObjektiv(ii).abgeschlossen() != 1) {
+										alleObjectivesfertig = false;
+									}
+								}
+								if (alleObjectivesfertig) {
+									System.out.println("Sieger: Team A");
+									InputKey.setStart(false);
 								}
 							}
-							if (alleObjectivesfertig) {
-								System.out.println("Sieger: Team B");
-								InputKey.setStart(false);
-							}
+							Objectivzaehler = 0;
 						}
-						Objectivzaehler = 0;
+					}
+				}
+				for (int i = 0; i < alleObjektives.size(); i++) {
+					if (getObjektiv(i).collisionB()) {
+						Objectivzaehler = Objectivzaehler + 1;
+						if (Objectivzaehler == 2) {
+							if (getObjektiv(i).getWieweit() > -256) {
+								getObjektiv(i).setWieweit(getObjektiv(i).getWieweit() - 1);
+							}
+							if (getObjektiv(i).getWieweit() < -255) {
+								alleObjectivesfertig = true;
+								for (int ii = 0; ii < alleObjektives.size(); ii++) {
+									if (getObjektiv(ii).abgeschlossen() != -1) {
+										alleObjectivesfertig = false;
+									}
+								}
+								if (alleObjectivesfertig) {
+									System.out.println("Sieger: Team B");
+									InputKey.setStart(false);
+								}
+							}
+							Objectivzaehler = 0;
+						}
 					}
 				}
 			}
@@ -232,10 +235,12 @@ public class Game extends JPanel {
 		}
 		// bots team A
 		for (int i = 0; i < alleBots_Team_A.size(); i++) {
+			getbot_team_A(i).still();
 			getbot_team_A(i).bewegen();
 		}
 		// bots team B
 		for (int i = 0; i < alleBots_Team_B.size(); i++) {
+			getbot_team_B(i).still();
 			getbot_team_B(i).bewegen();
 		}
 	}
@@ -286,7 +291,13 @@ public class Game extends JPanel {
 	}
 
 	public BOT getbot_team_A(int index) {
-		return alleBots_Team_A.get(index);
+		if(alleBots_Team_A.size() > 0) {
+			return alleBots_Team_A.get(index);
+		}else {
+			System.out.println("Error: Team A Bot mit index: " +index+" existiert nicht");
+			InputKey.setStart(false);
+			return null;
+		}
 	}
 
 	public void addBot_Team_B(BOT bot_b) {
@@ -294,7 +305,13 @@ public class Game extends JPanel {
 	}
 
 	public BOT getbot_team_B(int index) {
-		return alleBots_Team_B.get(index);
+		if(alleBots_Team_B.size() > 0) {
+			return alleBots_Team_B.get(index);
+		}else {
+			System.out.println("Error: Team B Bot mit index: " +index+" existiert nicht");
+			InputKey.setStart(false);
+			return null;
+		}
 	}
 
 	public void addBProjektil(Projektil projektil) {

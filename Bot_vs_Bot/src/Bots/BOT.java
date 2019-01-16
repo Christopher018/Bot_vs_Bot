@@ -103,8 +103,13 @@ public abstract class BOT extends JFrame {
 
 		g.setColor(Color.WHITE);
 		g.fillRect(x + 2, y - 3, 16, 1);
-
+		
+		try {
 		cooldownanzeige = 16 / cooldown;
+		}catch(java.lang.ArithmeticException ex) {
+			game.InputKey.setStart(false);
+			System.out.println("Error: cooldown muss zwischen 1 und 16 sein");
+		}
 
 		g.setColor(Color.BLUE);
 		g.fillRect(x + 2, y - 3, cooldownanzeige * cooldowncount, 1);
@@ -187,6 +192,8 @@ public abstract class BOT extends JFrame {
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
 
+				} catch (NullPointerException ex) {
+
 				}
 				try {
 					for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -197,7 +204,10 @@ public abstract class BOT extends JFrame {
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
 
+				} catch (NullPointerException ex) {
+
 				}
+				
 
 				if (darf_gehen == true) {
 					hoch = false;
@@ -245,6 +255,8 @@ public abstract class BOT extends JFrame {
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
 
+				} catch (NullPointerException ex) {
+
 				}
 				try {
 					for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -254,6 +266,8 @@ public abstract class BOT extends JFrame {
 						}
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
+
+				} catch (NullPointerException ex) {
 
 				}
 				if (darf_gehen == true) {
@@ -311,6 +325,8 @@ public abstract class BOT extends JFrame {
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
 
+			} catch (NullPointerException ex) {
+
 			}
 			try {
 				for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -321,6 +337,8 @@ public abstract class BOT extends JFrame {
 					}
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
+
+			} catch (NullPointerException ex) {
 
 			}
 			y = y + movespeed;
@@ -367,6 +385,8 @@ public abstract class BOT extends JFrame {
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
 
+			} catch (NullPointerException ex) {
+
 			}
 			try {
 				for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -377,6 +397,8 @@ public abstract class BOT extends JFrame {
 					}
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
+
+			} catch (NullPointerException ex) {
 
 			}
 			y = y - movespeed;
@@ -427,6 +449,8 @@ public abstract class BOT extends JFrame {
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
 
+				} catch (NullPointerException ex) {
+
 				}
 				try {
 					for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -436,6 +460,8 @@ public abstract class BOT extends JFrame {
 						}
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
+
+				} catch (NullPointerException ex) {
 
 				}
 				if (darf_gehen == true) {
@@ -484,6 +510,8 @@ public abstract class BOT extends JFrame {
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
 
+				} catch (NullPointerException ex) {
+
 				}
 				try {
 					for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -493,6 +521,8 @@ public abstract class BOT extends JFrame {
 						}
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
+
+				} catch (NullPointerException ex) {
 
 				}
 
@@ -550,6 +580,8 @@ public abstract class BOT extends JFrame {
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
 
+			} catch (NullPointerException ex) {
+
 			}
 			try {
 				for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -560,6 +592,8 @@ public abstract class BOT extends JFrame {
 					}
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
+
+			} catch (NullPointerException ex) {
 
 			}
 			y = y - movespeed;
@@ -606,6 +640,8 @@ public abstract class BOT extends JFrame {
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
 
+			} catch (NullPointerException ex) {
+
 			}
 			try {
 				for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -616,6 +652,8 @@ public abstract class BOT extends JFrame {
 					}
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
+
+			} catch (NullPointerException ex) {
 
 			}
 			y = y + movespeed;
@@ -666,6 +704,8 @@ public abstract class BOT extends JFrame {
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
 
+				} catch (NullPointerException ex) {
+
 				}
 				try {
 					for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -675,6 +715,8 @@ public abstract class BOT extends JFrame {
 						}
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
+
+				} catch (NullPointerException ex) {
 
 				}
 				if (darf_gehen == true) {
@@ -724,6 +766,8 @@ public abstract class BOT extends JFrame {
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
 
+				} catch (NullPointerException ex) {
+
 				}
 				try {
 					for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -733,6 +777,8 @@ public abstract class BOT extends JFrame {
 						}
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
+
+				} catch (NullPointerException ex) {
 
 				}
 
@@ -790,6 +836,8 @@ public abstract class BOT extends JFrame {
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
 
+			} catch (NullPointerException ex) {
+
 			}
 			try {
 				for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -800,6 +848,8 @@ public abstract class BOT extends JFrame {
 					}
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
+
+			} catch (NullPointerException ex) {
 
 			}
 
@@ -847,6 +897,8 @@ public abstract class BOT extends JFrame {
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
 
+			} catch (NullPointerException ex) {
+
 			}
 			try {
 				for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -857,6 +909,8 @@ public abstract class BOT extends JFrame {
 					}
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
+
+			} catch (NullPointerException ex) {
 
 			}
 
@@ -909,6 +963,8 @@ public abstract class BOT extends JFrame {
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
 
+				} catch (NullPointerException ex) {
+
 				}
 				try {
 					for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -918,6 +974,8 @@ public abstract class BOT extends JFrame {
 						}
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
+
+				} catch (NullPointerException ex) {
 
 				}
 
@@ -967,6 +1025,8 @@ public abstract class BOT extends JFrame {
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
 
+				} catch (NullPointerException ex) {
+
 				}
 				try {
 					for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -976,6 +1036,8 @@ public abstract class BOT extends JFrame {
 						}
 					}
 				} catch (ArrayIndexOutOfBoundsException ex) {
+
+				} catch (NullPointerException ex) {
 
 				}
 				if (darf_gehen == true) {
@@ -1032,6 +1094,8 @@ public abstract class BOT extends JFrame {
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
 
+			} catch (NullPointerException ex) {
+
 			}
 			try {
 				for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -1042,6 +1106,8 @@ public abstract class BOT extends JFrame {
 					}
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
+
+			} catch (NullPointerException ex) {
 
 			}
 
@@ -1089,6 +1155,8 @@ public abstract class BOT extends JFrame {
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
 
+			} catch (NullPointerException ex) {
+
 			}
 			try {
 				for (int i = 0; i < game.getAnzBotB(); i++) {
@@ -1099,6 +1167,8 @@ public abstract class BOT extends JFrame {
 					}
 				}
 			} catch (ArrayIndexOutOfBoundsException ex) {
+
+			} catch (NullPointerException ex) {
 
 			}
 

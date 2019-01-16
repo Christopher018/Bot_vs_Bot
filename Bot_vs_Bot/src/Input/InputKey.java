@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 
 import Bots.Bot_A;
 import Bots.Bot_F;
+import Bots.Bot_Show;
+import Bots.Bot_Show2;
 import Main.Game;
 import Map_bestaende.Objektiv;
 import Map_bestaende.Wand;
@@ -32,6 +34,7 @@ public class InputKey extends KeyAdapter {
 	private boolean del_teams = false;
 
 	private boolean auswaehlen = false;
+	private boolean sandbox = false;
 	private int auswahl = 0;
 	// welche Nr vom Objekt
 	private int schiebauswahl = 0;
@@ -217,6 +220,10 @@ public class InputKey extends KeyAdapter {
 		}
 		if (key == KeyEvent.VK_5) {
 			if (!auswaehlen) {
+				int x = (int) (frame.getMousePosition().getX() - 7);
+				int y = (int) (frame.getMousePosition().getY() - 31);
+				Bot_Show Bot_Show = new Bot_Show("Vorzeige Bot", x - 10, y - 10, 5, 5, 5, 5, 5, 3, game);
+				game.addBot_Team_A(Bot_Show);
 			} else {
 				auswahl = 5;
 			}
@@ -224,6 +231,10 @@ public class InputKey extends KeyAdapter {
 
 		if (key == KeyEvent.VK_6) {
 			if (!auswaehlen) {
+				int x = (int) (frame.getMousePosition().getX() - 7);
+				int y = (int) (frame.getMousePosition().getY() - 31);
+				Bot_Show2 Bot_Show = new Bot_Show2("Vorzeige Bot", x - 10, y - 10, 5, 5, 5, 5, 5, 3, game);
+				game.addBot_Team_B(Bot_Show);
 			} else {
 				auswahl = 6;
 			}
@@ -255,6 +266,12 @@ public class InputKey extends KeyAdapter {
 			} else {
 				auswahl = 0;
 			}
+		}
+		
+		
+		if (key == KeyEvent.VK_F2) {
+			sandbox = !sandbox;
+			System.out.println("sandbox modus: "+ sandbox);
 		}
 		//wechselt zwischen den beiden modi
 		if (key == KeyEvent.VK_CAPS_LOCK) {
@@ -548,4 +565,9 @@ public class InputKey extends KeyAdapter {
 		return auswahl;
 	}
 
+	public boolean isSandbox() {
+		return sandbox;
+	}
+
+	
 }
