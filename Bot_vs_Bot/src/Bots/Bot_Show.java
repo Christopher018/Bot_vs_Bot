@@ -38,7 +38,11 @@ public class Bot_Show extends BOT {
 		 */
 		
 		
-		
+		if(darfhoch()) {
+			hoch();
+		}else {
+			rechts();
+		}
 		
 		
 		

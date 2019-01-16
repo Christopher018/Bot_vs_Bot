@@ -305,13 +305,8 @@ public class Game extends JPanel {
 	}
 
 	public BOT getbot_team_B(int index) {
-		if(alleBots_Team_B.size() > 0) {
-			return alleBots_Team_B.get(index);
-		}else {
-			System.out.println("Error: Team B Bot mit index: " +index+" existiert nicht");
-			InputKey.setStart(false);
-			return null;
-		}
+		//System.out.println(alleBots_Team_B.get(index));
+		return alleBots_Team_B.get(index);
 	}
 
 	public void addBProjektil(Projektil projektil) {
